@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [AppComponent],
+      declarations: [AppComponent, NxWelcomeComponent],
     }).compileComponents();
   });
 
@@ -14,14 +15,14 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('div')?.textContent).toContain(
-      'Welcome mfng-arifudin'
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Welcome dashboard'
     );
   });
 
-  it(`should have as title 'mfng-arifudin'`, () => {
+  it(`should have as title 'dashboard'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('mfng-arifudin');
+    expect(app.title).toEqual('dashboard');
   });
 });

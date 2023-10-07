@@ -1,0 +1,27 @@
+<div class="content-container">
+  <span class="titles">Update Crud</span>
+
+  <a href="#" routerLink="/cruds" class="back">Back</a>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="creates">
+      <div class="fields">
+        <label for="first_name" class="labels">Title</label>
+        <input  formControlName="title" id="title" type="text" [(ngModel)]="post.title" id="first_name" class="inputs" placeholder="John" required>
+        <div *ngIf="f['title'].touched && f['title'].invalid">
+            <div *ngIf="f['title'].errors && f['title'].errors['required']" class="text-red-600">Title is required.</div>
+        </div>
+      </div>
+      <div class="fields">
+          <label for="body" class="labels">Body</label>
+          <textarea formControlName="body" id="body" type="text" [(ngModel)]="post.body" rows="4" class="areas" placeholder="Write your thoughts here..."></textarea>
+            <div *ngIf="f['body'].touched && f['body'].invalid">
+              <div *ngIf="f['body'].errors && f['body'].errors['required']" class="text-red-600">Body is required.</div>
+          </div>
+        </div>
+    </div>
+
+    <button class="actions" type="submit" [disabled]="!form.valid">Update</button>
+  </form>
+</div>

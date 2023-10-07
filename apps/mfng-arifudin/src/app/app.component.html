@@ -1,2 +1,14 @@
-<mfng-arifudin-nx-welcome></mfng-arifudin-nx-welcome>
-<router-outlet></router-outlet>
+<div class="content-container">
+  <nav class="navbar">
+    <span class="text-navbar">Header</span>
+  </nav>
+  <aside class="sidebars" aria-label="Sidebar">
+    <ul *ngFor="let items of sidebars;" class="remote-menu">
+      <li><a routerLink={{items.path}}>{{items.name}}</a></li>
+    </ul>
+  </aside>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <footer class="footers">Footer</footer>
+</div>

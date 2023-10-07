@@ -1,0 +1,49 @@
+.content-container {
+  @apply relative p-14;
+
+  .creates {
+    @apply bg-slate-400 p-4 rounded-lg flex justify-center items-center mb-4 w-64 text-white font-bold;
+  }
+
+  .content-table {
+    @apply relative overflow-x-auto shadow-md sm:rounded-lg;
+
+    .tables {
+      @apply w-full text-sm text-left text-gray-500 dark:text-gray-400;
+
+      .header-table {
+        @apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
+
+        .name-header {
+          @apply px-6 py-3;
+        }
+      }
+
+      .field-table {
+        @apply bg-white border-b dark:bg-gray-900 dark:border-gray-700;
+
+        .id-table {
+          @apply px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white;
+        }
+
+        .fielddesc {
+          @apply px-6 py-4;
+        }
+
+        .field-action {
+          @apply px-6 flex py-4 gap-2;
+
+          .actions {
+            @apply font-medium text-blue-600 dark:text-blue-500 hover:underline;
+          }
+
+          .delete {
+            @apply font-medium text-red-600 dark:text-red-500 hover:underline;
+          }
+        }
+      }
+    }
+
+  }
+
+}

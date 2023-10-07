@@ -1,0 +1,46 @@
+
+<div class="content-container">
+  <a href="#" routerLink="/crud/create/" class="creates">Create New Post</a>
+  <div class="content-table">
+    <table class="tables">
+        <thead class="header-table">
+            <tr>
+                <th scope="col" class="name-header">
+                    ID
+                </th>
+                <th scope="col" class="name-header">
+                    title
+                </th>
+                <th scope="col" class="name-header">
+                    Description
+                </th>
+                <th scope="col" class="name-header">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let post of posts  | paginate : {itemsPerPage: tableSize, currentPage: page, totalItems: count}; let i = index" class="field-table">
+                <th scope="row" class="id-table">
+                  {{ post.id }}
+                </th>
+                <td class="fielddesc">
+                  {{ post.title }}
+                </td>
+                <td class="fielddesc">
+                  {{ post.body }}
+                </td>
+                <td class="field-action">
+                  <a href="#" [routerLink]="['/crud/', post.id, 'view']" class="actions">View</a>
+                  <a href="#" [routerLink]="['/crud/', post.id, 'edit']" class="actions">Edit</a>
+                    <button type="button" (click)="deletePost(post.id)" class="delete">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="flex mt-6">
+      <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+  </div>
+  </div>
+</div>

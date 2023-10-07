@@ -6,12 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'mfng-arifudin';
+  title = 'dashboard';
 
-  condition = '';
-
-  sidebars = [
-    {name: 'Home', path: '/'},
-    {name: 'Crud', path: 'cruds'}
-  ]
 }

@@ -1,0 +1,11 @@
+.content-container {
+  @apply relative p-6;
+
+  .titles {
+    @apply flex my-4 text-2xl font-bold;
+  }
+
+  .back {
+    @apply bg-slate-400 p-4 rounded-lg flex justify-center items-center mb-4 w-64 text-white font-bold
+  }
+}
